@@ -280,3 +280,39 @@ Changes not staged for commit:
 
 no changes added to commit (use "git add" and/or "git commit -a")
 
+D:\Documents and Settings\study_practise\books_study>git add ./git_cmd_note.md
+
+D:\Documents and Settings\study_practise\books_study>git commit -m "Modify:updat
+e command"
+[master fbb7274] Modify:update command
+ 1 file changed, 87 insertions(+)
+
+D:\Documents and Settings\study_practise\books_study>git push
+Counting objects: 7, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (7/7), 1.26 KiB | 0 bytes/s, done.
+Total 7 (delta 3), reused 0 (delta 0)
+remote: Resolving deltas: 100% (3/3), completed with 2 local objects.
+To https://github.com/YQMCU/books_study.git
+   a544b72..fbb7274  master -> master
+
+
+D:\Documents and Settings\study_practise\books_study>git add ./update.bat
+
+D:\Documents and Settings\study_practise\books_study>git commit -m "Add:add upda
+te.bat to excute bat to update git_cmd_note.md"
+[master 0a73932] Add:add update.bat to excute bat to update git_cmd_note.md
+ 1 file changed, 4 insertions(+)
+ create mode 100644 update.bat
+
+D:\Documents and Settings\study_practise\books_study>git push
+Counting objects: 3, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 370 bytes | 0 bytes/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local objects.
+To https://github.com/YQMCU/books_study.git
+   fbb7274..0a73932  master -> master
+
