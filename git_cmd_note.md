@@ -355,3 +355,32 @@ remote: Resolving deltas: 100% (1/1), completed with 1 local objects.
 To https://github.com/YQMCU/books_study.git
    8fbc8f5..72fe804  master -> master
 
+D:\Documents and Settings\study_practise\books_study>git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   01-flask_web_development/note.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+D:\Documents and Settings\study_practise\books_study>git add ./01-flask_web_deve
+lopment/note.html
+
+D:\Documents and Settings\study_practise\books_study>git commit -m "Modify:edit
+chapter01 preface"
+[master 8fb9905] Modify:edit chapter01 preface
+ 1 file changed, 22 insertions(+)
+
+D:\Documents and Settings\study_practise\books_study>git push
+Counting objects: 4, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 1.34 KiB | 0 bytes/s, done.
+Total 4 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local objects.
+To https://github.com/YQMCU/books_study.git
+   b6801db..8fb9905  master -> master
+
