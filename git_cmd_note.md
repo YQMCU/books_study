@@ -193,3 +193,90 @@ remote: Resolving deltas: 100% (1/1), completed with 1 local objects.
 To https://github.com/YQMCU/books_study.git
    2f82da6..0dc90a0  master -> master
 
+D:\Documents and Settings\study_practise\books_study>git add .
+
+D:\Documents and Settings\study_practise\books_study>git commit -m "Modify:set 0
+1-flask_web_development/{note.html} charset=utf8"
+[master 9f8e540] Modify:set 01-flask_web_development/{note.html} charset=utf8
+ 2 files changed, 28 insertions(+), 2 deletions(-)
+
+D:\Documents and Settings\study_practise\books_study>git push
+Counting objects: 5, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (5/5), 731 bytes | 0 bytes/s, done.
+Total 5 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/YQMCU/books_study.git
+   0dc90a0..9f8e540  master -> master
+
+D:\Documents and Settings\study_practise\books_study>git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   git_cmd_note.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        scripts/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+D:\Documents and Settings\study_practise\books_study>git add ./scripts
+warning: LF will be replaced by CRLF in scripts/strapdown.js.
+The file will have its original line endings in your working directory.
+
+D:\Documents and Settings\study_practise\books_study>git add ./scripts/
+
+D:\Documents and Settings\study_practise\books_study>git commit -m "Add:add a sc
+ript file into scripts/strapdown.js"
+[master a544b72] Add:add a script file into scripts/strapdown.js
+ 1 file changed, 442 insertions(+)
+ create mode 100644 scripts/strapdown.js
+
+D:\Documents and Settings\study_practise\books_study>git push
+Counting objects: 4, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 13.71 KiB | 0 bytes/s, done.
+Total 4 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local objects.
+To https://github.com/YQMCU/books_study.git
+   9f8e540..a544b72  master -> master
+
+D:\Documents and Settings\study_practise\books_study>git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   01-flask_web_development/note.html
+        modified:   git_cmd_note.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+D:\Documents and Settings\study_practise\books_study>git add ./01-flask_web_deve
+lopment/note.html
+
+D:\Documents and Settings\study_practise\books_study>git  commit -m "Modify:modi
+fy the script src"
+[master 8c0b301] Modify:modify the script src
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+D:\Documents and Settings\study_practise\books_study>git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   git_cmd_note.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
