@@ -316,3 +316,42 @@ remote: Resolving deltas: 100% (1/1), completed with 1 local objects.
 To https://github.com/YQMCU/books_study.git
    fbb7274..0a73932  master -> master
 
+D:\Documents and Settings\study_practise\books_study>git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        scripts/strapdown.css
+        scripts/themes/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+D:\Documents and Settings\study_practise\books_study>git add ./scripts/strapdown
+.css ./scripts/themes/
+warning: LF will be replaced by CRLF in scripts/strapdown.css.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in scripts/themes/bootstrap-responsive.min.
+css.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in scripts/themes/united.min.css.
+The file will have its original line endings in your working directory.
+
+D:\Documents and Settings\study_practise\books_study>git commit -m "Add:add scri
+pts/ strapdown.js's stylesheets"
+[master 72fe804] Add:add scripts/ strapdown.js's stylesheets
+ 3 files changed, 953 insertions(+)
+ create mode 100644 scripts/strapdown.css
+ create mode 100644 scripts/themes/bootstrap-responsive.min.css
+ create mode 100644 scripts/themes/united.min.css
+
+D:\Documents and Settings\study_practise\books_study>git push
+Counting objects: 7, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (7/7), 21.09 KiB | 0 bytes/s, done.
+Total 7 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local objects.
+To https://github.com/YQMCU/books_study.git
+   8fbc8f5..72fe804  master -> master
+
