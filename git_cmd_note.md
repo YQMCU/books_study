@@ -139,6 +139,31 @@ remote: Resolving deltas: 100% (1/1), completed with 1 local objects.
 To https://github.com/YQMCU/books_study.git
    6bdf781..fafc09a  master -> master
 
-D:\Documents and Settings\study_practise\books_study>
+D:\Documents and Settings\study_practise\books_study>git add .
 
+D:\Documents and Settings\study_practise\books_study>git commit -m "add : git_cm
+d_note.md to note the git commands for reviewing"
+[master 2f82da6] add : git_cmd_note.md to note the git commands for reviewing
+ 1 file changed, 144 insertions(+)
+ create mode 100644 git_cmd_note.md
+
+D:\Documents and Settings\study_practise\books_study>git push
+Counting objects: 3, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 1.98 KiB | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/YQMCU/books_study.git
+   fafc09a..2f82da6  master -> master
+
+D:\Documents and Settings\study_practise\books_study>git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   git_cmd_note.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
 
