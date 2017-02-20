@@ -167,3 +167,29 @@ Changes not staged for commit:
 
 no changes added to commit (use "git add" and/or "git commit -a")
 
+D:\Documents and Settings\study_practise\books_study>git add .
+
+D:\Documents and Settings\study_practise\books_study>git commit -m "Modify : mod
+ify the 01-flask_web_development/note.md to be note.html"
+[master 0dc90a0] Modify : modify the 01-flask_web_development/note.md to be note
+.html
+ 2 files changed, 26 insertions(+), 1 deletion(-)
+ rename 01-flask_web_development/{note.md => note.html} (100%)
+
+D:\Documents and Settings\study_practise\books_study>git commit -m "Modify : ren
+ame 01-flask_web_development/{note.md => note.html "
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+nothing to commit, working tree clean
+
+D:\Documents and Settings\study_practise\books_study>git push
+Counting objects: 4, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 647 bytes | 0 bytes/s, done.
+Total 4 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local objects.
+To https://github.com/YQMCU/books_study.git
+   2f82da6..0dc90a0  master -> master
+
