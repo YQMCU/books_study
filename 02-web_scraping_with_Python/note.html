@@ -536,11 +536,93 @@ Lxml已经实现了大部分CSS3属性，其支持的功能参见[https://csssel
 每种抓取方法的优缺点：
 
 |抓取方法|性能|使用难度|安装难度|
-|----|----|----|----
+|----|----|----|----|
 |正则表达式|快|困难|简单（内置模块）|
 |Beautiful Soup|慢|简单|简单（纯Python）|
 |Lxml|快|简单|简单（C语言）|
 
+**笔者注**：由于lxml已经可以用`pip install`直接安装，所以安装难度几乎没有。
+
+由上表可以看出，如果只需要**抓取少量数据**，并且想要**避免依赖**，正则表达式可能更加适合。
+
+不过，通常情况下，lxml是抓取数据的最好选择，既**快速**，又**健壮**。
+
+#### 2.2.6 为链接爬虫添加抓取回调
+
+将抓取国家数据的方法集成到上一章的链接爬虫中。
+
+要想复用这段爬虫代码，抓取其他网站，需要添加一个`callback`参数处理抓取行为。
+
+`callback`回调函数，在发生某个特定事件之后会调用该函数。（本例中会在网页下载完成后调用）
+
+示例`scraping_callback.py`如下:
+
+```python
+# -*- coding : utf-8 -*-
+
+import url_download
+import re
+
+def link_crawler(seed_url,link_regex,scrape_callback=None):
+    """Crawl from the given seed URL following links matched by link_regex
+    """
+    crawl_queue = [seed_url]
+    # keep track which URL's have seen before
+    while crawl_queue:
+        url = crawl_queue.pop()
+        html = download(url)
+        # filter for links matching our regular expression
+        for link in get_links(html):
+            # check if link matches expected regex
+            if re.match(link_regex,link):
+                # form absolute link
+                link = urlparse.urljoin(seed_url,link)
+                # check if have already seen this link
+                if link not in seen:
+                    seen.add(link)
+                    crawl_queue.append(link)
+        links = []
+        if scrape_callback:
+            links.extend(scrape_callback(url,html) or [])
+
+def get_links(html):
+    """Return a list of links from html
+    """
+    # a regular expression to extract all links from the webpage
+    webpage_regex = re.compile('<a[^>]+href=["\'](.*?)["\']',re.IGNORECASE)
+    # list of all links from the webpage
+    return webpage_regex.findall(html)
+
+def scrape_callback(url,html):
+    if re.search('/view/',url):
+        tree = lxml.html.fromstring(html)
+        row = [tree.cssselect('table > tr #places_%s__row > td.w2p_fw' % field)[0].text_content() for field in FIELDS]
+        print(url,row)
+```
+
+**完整链接爬虫代码见**[此处](codes/ch02/link_crawler_full.py).
+
+本例中的回调函数包含url和html两个参数，并且返回一个待爬取的URL列表。
+
+此外，还可以写一个回调类，将数据保存为CSV格式。
+
+以后补充。
+
+...
+...
+
+### 2.3 本章小结
+
+本章中，主要介绍了抓取网页数据的方法：
+
+* 正则表达式在一次性数据抓取中非常有用，还可以避免解析整个网页带来的开销
+* BeautifulSoup提供了更高层次的接口，同时还能避免过多麻烦的依赖
+* **lxml通常情况是最佳选择，速度更快，功能更加丰富**。 
+
+下一章介绍缓存技术，这样就能把网页保存下来，只在爬虫一次运行时，才会下载网页。
+
+
+## Chapter03 第3章 下载缓存
 
 
 
