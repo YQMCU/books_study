@@ -384,3 +384,183 @@ remote: Resolving deltas: 100% (1/1), completed with 1 local objects.
 To https://github.com/YQMCU/books_study.git
    b6801db..8fb9905  master -> master
 
+D:\Documents and Settings\study_practise\books_study>git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        02-web_scraping_with_Python/
+        note_template.html
+        scripts/markdown_parse.js
+        scripts/themes/fonts/
+        scripts/themes/google_font_ubuntu.css
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+D:\Documents and Settings\study_practise\books_study>git add scripts/themes/goog
+le_font_ubuntu.css
+warning: LF will be replaced by CRLF in scripts/themes/google_font_ubuntu.css.
+The file will have its original line endings in your working directory.
+
+D:\Documents and Settings\study_practise\books_study>git commit -m "Add:add impo
+rt static stylesheet file google_font_ubuntu.css"
+[master 626b34a] Add:add import static stylesheet file google_font_ubuntu.css
+ 1 file changed, 48 insertions(+)
+ create mode 100644 scripts/themes/google_font_ubuntu.css
+
+D:\Documents and Settings\study_practise\books_study>git push
+Counting objects: 5, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 967 bytes | 0 bytes/s, done.
+Total 5 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/YQMCU/books_study.git
+   ae23448..626b34a  master -> master
+
+D:\Documents and Settings\study_practise\books_study>git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        02-web_scraping_with_Python/
+        note_template.html
+        scripts/markdown_parse.js
+        scripts/themes/fonts/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+D:\Documents and Settings\study_practise\books_study>dir 02-web_scraping_with_Py
+thon
+ 驱动器 D 中的卷是 本地磁盘(D:)
+ 卷的序列号是 D2CF-7AD4
+
+ D:\Documents and Settings\study_practise\books_study\02-web_scraping_with_Pytho
+n 的目录
+
+2017-02-23  12:43    <DIR>          .
+2017-02-23  12:43    <DIR>          ..
+2017-02-23  01:25    <DIR>          codes
+2017-02-23  12:33            11,025 note.html
+2017-02-23  12:42            11,226 test.html
+               2 个文件         22,251 字节
+               3 个目录 62,169,280,512 可用字节
+
+D:\Documents and Settings\study_practise\books_study>git add scripts/themes/font
+s/
+
+D:\Documents and Settings\study_practise\books_study>git commit -m "Add:add stat
+ic woff  ubuntu fonts"
+[master f556673] Add:add static woff  ubuntu fonts
+ 6 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 scripts/themes/fonts/ODszJI8YqNw8V2xPulzjO_esZW2xOQ-xsNqO47m
+55DA.woff2
+ create mode 100644 scripts/themes/fonts/WkvQmvwsfw_KKeau9SlQ2_esZW2xOQ-xsNqO47m
+55DA.woff2
+ create mode 100644 scripts/themes/fonts/Wu5Iuha-XnKDBvqRwQzAG_esZW2xOQ-xsNqO47m
+55DA.woff2
+ create mode 100644 scripts/themes/fonts/gYAtqXUikkQjyJA1SnpDLvesZW2xOQ-xsNqO47m
+55DA.woff2
+ create mode 100644 scripts/themes/fonts/iQ9VJx1UMASKNiGywyyCXvesZW2xOQ-xsNqO47m
+55DA.woff2
+ create mode 100644 scripts/themes/fonts/sDGTilo5QRsfWu6Yc11AXg.woff2
+
+D:\Documents and Settings\study_practise\books_study>git push
+Counting objects: 11, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (11/11), done.
+Writing objects: 100% (11/11), 152.19 KiB | 0 bytes/s, done.
+Total 11 (delta 3), reused 0 (delta 0)
+remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
+To https://github.com/YQMCU/books_study.git
+   626b34a..f556673  master -> master
+
+D:\Documents and Settings\study_practise\books_study>git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        02-web_scraping_with_Python/
+        note_template.html
+        scripts/markdown_parse.js
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+D:\Documents and Settings\study_practise\books_study>git add 02-web_scraping_wit
+h_Python/
+warning: LF will be replaced by CRLF in 02-web_scraping_with_Python/note.html.
+The file will have its original line endings in your working directory.
+
+D:\Documents and Settings\study_practise\books_study>git commit -m "Add:Web Scra
+ping with Python note use markdown_parse.js to convert the html"
+[master a405e9d] Add:Web Scraping with Python note use markdown_parse.js to conv
+ert the html
+ 10 files changed, 765 insertions(+)
+ create mode 100644 02-web_scraping_with_Python/codes/link_scrape.py
+ create mode 100644 02-web_scraping_with_Python/codes/sitemap.xml
+ create mode 100644 02-web_scraping_with_Python/codes/sitemap_parse.py
+ create mode 100644 02-web_scraping_with_Python/codes/url_download.py
+ create mode 100644 02-web_scraping_with_Python/codes/url_download.pyc
+ create mode 100644 02-web_scraping_with_Python/codes/url_download_retry.py
+ create mode 100644 02-web_scraping_with_Python/codes/url_download_retry.pyc
+ create mode 100644 02-web_scraping_with_Python/codes/url_download_set_agent.py
+ create mode 100644 02-web_scraping_with_Python/note.html
+ create mode 100644 02-web_scraping_with_Python/test.html
+
+D:\Documents and Settings\study_practise\books_study>git push
+Counting objects: 14, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (14/14), done.
+Writing objects: 100% (14/14), 8.00 KiB | 0 bytes/s, done.
+Total 14 (delta 4), reused 0 (delta 0)
+remote: Resolving deltas: 100% (4/4), completed with 1 local objects.
+To https://github.com/YQMCU/books_study.git
+   f556673..a405e9d  master -> master
+
+D:\Documents and Settings\study_practise\books_study>git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        note_template.html
+        scripts/markdown_parse.js
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+D:\Documents and Settings\study_practise\books_study>git add scripts/markdown_pa
+rse.js
+
+D:\Documents and Settings\study_practise\books_study>git commit -m "Add:the scri
+pt for markdown format content convert to the common text"
+[master e9d3a20] Add:the script for markdown format content convert to the commo
+n text
+ 1 file changed, 22 insertions(+)
+ create mode 100644 scripts/markdown_parse.js
+
+D:\Documents and Settings\study_practise\books_study>git push
+Counting objects: 4, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 792 bytes | 0 bytes/s, done.
+Total 4 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local objects.
+To https://github.com/YQMCU/books_study.git
+   a405e9d..e9d3a20  master -> master
+
+
+
+
+
+
+
+
+
+
+
+
+
+
