@@ -552,7 +552,41 @@ To https://github.com/YQMCU/books_study.git
    a405e9d..e9d3a20  master -> master
 
 
+D:\Documents and Settings\study_practise\books_study>git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
 
+        modified:   git_cmd_note.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        note_template.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+D:\Documents and Settings\study_practise\books_study>git add note_template.html
+
+D:\Documents and Settings\study_practise\books_study>git commit -m "Add:note tem
+plate"
+[master e9542cc] Add:note template
+ 1 file changed, 26 insertions(+)
+ create mode 100644 note_template.html
+
+D:\Documents and Settings\study_practise\books_study>git push
+Counting objects: 3, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 734 bytes | 0 bytes/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local objects.
+To https://github.com/YQMCU/books_study.git
+   dda85e2..e9542cc  master -> master
+
+   
 
 
 
