@@ -943,7 +943,241 @@ remote: Resolving deltas: 100% (1/1), completed with 1 local objects.
 To https://github.com/YQMCU/books_study.git
    a457475..7a7f633  master -> master
 
-   
+
+D:\Documents and Settings\study_practise\books_study>git pull 02-web_scraping_wi
+th_Python/codes/ch02/
+fatal: '02-web_scraping_with_Python/codes/ch02/' does not appear to be a git rep
+ository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+D:\Documents and Settings\study_practise\books_study>git pull https://www.github
+/yqmcu/books_study/02-web_scraping_with_Python/codes/ch02/
+fatal: unable to access 'https://www.github/yqmcu/books_study/02-web_scraping_wi
+th_Python/codes/ch02/': Failed to connect to www.github port 443: Timed out
+
+D:\Documents and Settings\study_practise\books_study>git pull https://www.github
+.com/yqmcu/books_study/02-web_scraping_with_Python/codes/ch02/
+remote: Not Found
+fatal: repository 'https://github.com/yqmcu/books_study/02-web_scraping_with_Pyt
+hon/codes/ch02/' not found
+
+D:\Documents and Settings\study_practise\books_study>
+
+D:\Documents and Settings\study_practise\books_study>git pull https://github.com
+/yqmcu/books_study/02-web_scraping_with_Python/codes/ch02/
+remote: Not Found
+fatal: repository 'https://github.com/yqmcu/books_study/02-web_scraping_with_Pyt
+hon/codes/ch02/' not found
+
+D:\Documents and Settings\study_practise\books_study>git pull --help
+
+D:\Documents and Settings\study_practise\books_study>
+
+D:\Documents and Settings\study_practise\books_study>git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        deleted:    02-web_scraping_with_Python/codes/ch01/url_download.pyc
+        deleted:    02-web_scraping_with_Python/codes/ch01/url_download_retry.py
+c
+        deleted:    02-web_scraping_with_Python/codes/link_scrape.py
+        deleted:    02-web_scraping_with_Python/codes/sitemap.xml
+        deleted:    02-web_scraping_with_Python/codes/sitemap_parse.py
+        deleted:    02-web_scraping_with_Python/codes/url_download.py
+        deleted:    02-web_scraping_with_Python/codes/url_download.pyc
+        deleted:    02-web_scraping_with_Python/codes/url_download_retry.py
+        deleted:    02-web_scraping_with_Python/codes/url_download_retry.pyc
+        deleted:    02-web_scraping_with_Python/codes/url_download_set_agent.py
+        deleted:    02-web_scraping_with_Python/note.html
+        modified:   02-web_scraping_with_Python/test.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        example.webscraping.html
+        scripts/strapdownV2.css
+        scripts/strapdownV2.js
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+D:\Documents and Settings\study_practise\books_study>git rm -r 02-web_scraping_w
+ith_Python/codes/
+rm '02-web_scraping_with_Python/codes/ch01/link_scrape.py'
+rm '02-web_scraping_with_Python/codes/ch01/sitemap.xml'
+rm '02-web_scraping_with_Python/codes/ch01/sitemap_parse.py'
+rm '02-web_scraping_with_Python/codes/ch01/url_download.py'
+rm '02-web_scraping_with_Python/codes/ch01/url_download.pyc'
+rm '02-web_scraping_with_Python/codes/ch01/url_download_retry.py'
+rm '02-web_scraping_with_Python/codes/ch01/url_download_retry.pyc'
+rm '02-web_scraping_with_Python/codes/ch01/url_download_set_agent.py'
+rm '02-web_scraping_with_Python/codes/ch02/bs4_find_demo.py'
+rm '02-web_scraping_with_Python/codes/ch02/bs4_scraping.py'
+rm '02-web_scraping_with_Python/codes/ch02/lxml_css_demo.py'
+rm '02-web_scraping_with_Python/codes/ch02/lxml_parse_demo.py'
+rm '02-web_scraping_with_Python/codes/ch02/regex_demo.py'
+rm '02-web_scraping_with_Python/codes/ch02/soup_parse_demo.py'
+rm '02-web_scraping_with_Python/codes/ch02/url_download.py'
+rm '02-web_scraping_with_Python/codes/link_scrape.py'
+rm '02-web_scraping_with_Python/codes/sitemap.xml'
+rm '02-web_scraping_with_Python/codes/sitemap_parse.py'
+rm '02-web_scraping_with_Python/codes/url_download.py'
+rm '02-web_scraping_with_Python/codes/url_download.pyc'
+rm '02-web_scraping_with_Python/codes/url_download_retry.py'
+rm '02-web_scraping_with_Python/codes/url_download_retry.pyc'
+rm '02-web_scraping_with_Python/codes/url_download_set_agent.py'
+Deletion of directory '02-web_scraping_with_Python/codes/ch02' failed. Should I
+try again? (y/n) ^C
+D:\Documents and Settings\study_practise\books_study>git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        deleted:    02-web_scraping_with_Python/codes/ch01/link_scrape.py
+        deleted:    02-web_scraping_with_Python/codes/ch01/sitemap.xml
+        deleted:    02-web_scraping_with_Python/codes/ch01/sitemap_parse.py
+        deleted:    02-web_scraping_with_Python/codes/ch01/url_download.py
+        deleted:    02-web_scraping_with_Python/codes/ch01/url_download.pyc
+        deleted:    02-web_scraping_with_Python/codes/ch01/url_download_retry.py
+
+        deleted:    02-web_scraping_with_Python/codes/ch01/url_download_retry.py
+c
+        deleted:    02-web_scraping_with_Python/codes/ch01/url_download_set_agen
+t.py
+        deleted:    02-web_scraping_with_Python/codes/ch02/bs4_find_demo.py
+        deleted:    02-web_scraping_with_Python/codes/ch02/bs4_scraping.py
+        deleted:    02-web_scraping_with_Python/codes/ch02/lxml_css_demo.py
+        deleted:    02-web_scraping_with_Python/codes/ch02/lxml_parse_demo.py
+        deleted:    02-web_scraping_with_Python/codes/ch02/regex_demo.py
+        deleted:    02-web_scraping_with_Python/codes/ch02/soup_parse_demo.py
+        deleted:    02-web_scraping_with_Python/codes/ch02/url_download.py
+        deleted:    02-web_scraping_with_Python/codes/link_scrape.py
+        deleted:    02-web_scraping_with_Python/codes/sitemap.xml
+        deleted:    02-web_scraping_with_Python/codes/sitemap_parse.py
+        deleted:    02-web_scraping_with_Python/codes/url_download.py
+        deleted:    02-web_scraping_with_Python/codes/url_download.pyc
+        deleted:    02-web_scraping_with_Python/codes/url_download_retry.py
+        deleted:    02-web_scraping_with_Python/codes/url_download_retry.pyc
+        deleted:    02-web_scraping_with_Python/codes/url_download_set_agent.py
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        deleted:    02-web_scraping_with_Python/note.html
+        modified:   02-web_scraping_with_Python/test.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        02-web_scraping_with_Python/codes/
+        example.webscraping.html
+        scripts/strapdownV2.css
+        scripts/strapdownV2.js
+
+
+D:\Documents and Settings\study_practise\books_study>git commit -m ""
+
+D:\Documents and Settings\study_practise\books_study>git push
+Everything up-to-date
+
+D:\Documents and Settings\study_practise\books_study>git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        deleted:    02-web_scraping_with_Python/codes/ch01/link_scrape.py
+        deleted:    02-web_scraping_with_Python/codes/ch01/sitemap.xml
+        deleted:    02-web_scraping_with_Python/codes/ch01/sitemap_parse.py
+        deleted:    02-web_scraping_with_Python/codes/ch01/url_download.py
+        deleted:    02-web_scraping_with_Python/codes/ch01/url_download.pyc
+        deleted:    02-web_scraping_with_Python/codes/ch01/url_download_retry.py
+
+        deleted:    02-web_scraping_with_Python/codes/ch01/url_download_retry.py
+c
+        deleted:    02-web_scraping_with_Python/codes/ch01/url_download_set_agen
+t.py
+        deleted:    02-web_scraping_with_Python/codes/ch02/bs4_find_demo.py
+        deleted:    02-web_scraping_with_Python/codes/ch02/bs4_scraping.py
+        deleted:    02-web_scraping_with_Python/codes/ch02/lxml_css_demo.py
+        deleted:    02-web_scraping_with_Python/codes/ch02/lxml_parse_demo.py
+        deleted:    02-web_scraping_with_Python/codes/ch02/regex_demo.py
+        deleted:    02-web_scraping_with_Python/codes/ch02/soup_parse_demo.py
+        deleted:    02-web_scraping_with_Python/codes/ch02/url_download.py
+        deleted:    02-web_scraping_with_Python/codes/link_scrape.py
+        deleted:    02-web_scraping_with_Python/codes/sitemap.xml
+        deleted:    02-web_scraping_with_Python/codes/sitemap_parse.py
+        deleted:    02-web_scraping_with_Python/codes/url_download.py
+        deleted:    02-web_scraping_with_Python/codes/url_download.pyc
+        deleted:    02-web_scraping_with_Python/codes/url_download_retry.py
+        deleted:    02-web_scraping_with_Python/codes/url_download_retry.pyc
+        deleted:    02-web_scraping_with_Python/codes/url_download_set_agent.py
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        deleted:    02-web_scraping_with_Python/note.html
+        modified:   02-web_scraping_with_Python/test.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        02-web_scraping_with_Python/codes/
+        example.webscraping.html
+        scripts/strapdownV2.css
+        scripts/strapdownV2.js
+
+
+D:\Documents and Settings\study_practise\books_study>git commit -m "Modify:Modif
+y codes directions"
+[master 555b9ac] Modify:Modify codes directions
+ 23 files changed, 262 deletions(-)
+ delete mode 100644 02-web_scraping_with_Python/codes/ch01/link_scrape.py
+ delete mode 100644 02-web_scraping_with_Python/codes/ch01/sitemap.xml
+ delete mode 100644 02-web_scraping_with_Python/codes/ch01/sitemap_parse.py
+ delete mode 100644 02-web_scraping_with_Python/codes/ch01/url_download.py
+ delete mode 100644 02-web_scraping_with_Python/codes/ch01/url_download.pyc
+ delete mode 100644 02-web_scraping_with_Python/codes/ch01/url_download_retry.py
+
+ delete mode 100644 02-web_scraping_with_Python/codes/ch01/url_download_retry.py
+c
+ delete mode 100644 02-web_scraping_with_Python/codes/ch01/url_download_set_agen
+t.py
+ delete mode 100644 02-web_scraping_with_Python/codes/ch02/bs4_find_demo.py
+ delete mode 100644 02-web_scraping_with_Python/codes/ch02/bs4_scraping.py
+ delete mode 100644 02-web_scraping_with_Python/codes/ch02/lxml_css_demo.py
+ delete mode 100644 02-web_scraping_with_Python/codes/ch02/lxml_parse_demo.py
+ delete mode 100644 02-web_scraping_with_Python/codes/ch02/regex_demo.py
+ delete mode 100644 02-web_scraping_with_Python/codes/ch02/soup_parse_demo.py
+ delete mode 100644 02-web_scraping_with_Python/codes/ch02/url_download.py
+ delete mode 100644 02-web_scraping_with_Python/codes/link_scrape.py
+ delete mode 100644 02-web_scraping_with_Python/codes/sitemap.xml
+ delete mode 100644 02-web_scraping_with_Python/codes/sitemap_parse.py
+ delete mode 100644 02-web_scraping_with_Python/codes/url_download.py
+ delete mode 100644 02-web_scraping_with_Python/codes/url_download.pyc
+ delete mode 100644 02-web_scraping_with_Python/codes/url_download_retry.py
+ delete mode 100644 02-web_scraping_with_Python/codes/url_download_retry.pyc
+ delete mode 100644 02-web_scraping_with_Python/codes/url_download_set_agent.py
+
+D:\Documents and Settings\study_practise\books_study>git push
+Counting objects: 3, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 293 bytes | 0 bytes/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/YQMCU/books_study.git
+   eb8a528..555b9ac  master -> master
+
+
 
 
 
