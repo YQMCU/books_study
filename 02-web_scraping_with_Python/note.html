@@ -1,9 +1,13 @@
 <!DOCTYPE html>
-<html>
-<title>《用Python写网络爬虫》笔记</title>
-<meta charset="utf-8">
-<xmp theme="united" style="display:block;">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>笔记</title>
+</head>
+<body>
+    
 
+<div id="md-body">
 * 书名：用Python写网络爬虫
 * 原名：Web Scraping with Python:Scrape data from any website with the power of Python
 * 作者：[澳]Richard Lawson
@@ -11,7 +15,6 @@
 * 出版社：人民邮电出版社
 * 版本：2016年9月第1版
 * 备注：PACKT PUBLISHING
-* 页面展示：[link](https://yqmcu.github.io/books_study/02-web_scraping_with_Python/note.html)
 
 
 # 本书概要
@@ -54,7 +57,7 @@
 ### 1.3 背景调研
 
 
-1.3.1 检查`robots.txt`
+#### 1.3.1 检查`robots.txt`
 
 `robots.txt`文件，可以让爬虫了解爬取该网站时存在哪些限制。
 
@@ -62,7 +65,7 @@
 
 [robots.txt相关](http://www.robotstxt.org)
 
-爬虫示例`robots-demo.txt`：
+爬虫示例`robots_demo.txt`：
 
     # section 1
     User-agent:BadCrawler
@@ -76,7 +79,7 @@
     # section 3
     Sitemap:http://example.webscraping.con/sitemap.xml
 
-1.3.2 检查网站地图
+#### 1.3.2 检查网站地图
 
 网站提供的`Sitemap`(网站地图)文件，可以帮助爬虫定位网站最新的内容，而无需爬取每一个网页。
 
@@ -84,7 +87,7 @@
 
 Sitemap可能存在问题：缺失，过期或者不完整。
 
-1.3.3 估算网站大小
+#### 1.3.3 估算网站大小
 
 目标网站的大小会影响爬取方式。
 
@@ -92,7 +95,7 @@ Sitemap可能存在问题：缺失，过期或者不完整。
 
 利用Google的site关键词过滤来搜索相关爬取内容的结果页。
 
-1.3.4 识别网站所用技术
+#### 1.3.4 识别网站所用技术
 
 构建网站所用的技术类型也会对爬取产生影响。
 
@@ -104,7 +107,7 @@ Sitemap可能存在问题：缺失，过期或者不完整。
 
 该模块将URL作为参数，下载该URL并对其进行分析，返回该网站使用的技术。
 
-例子`builtwith-demo.py`：
+例子`builtwith_demo.py`：
 
     import builtwith
     builtwith.parse("http://example.webscraping.com")
@@ -124,7 +127,7 @@ Sitemap可能存在问题：缺失，过期或者不完整。
 
 如果是`ASP.NET`，那么在爬取网页时，就必须用到会话管理和表单提交了。对于这些更加复杂的情况，会在第5章和第6章中进行介绍。
 
-1.3.5 寻找网站所有者
+#### 1.3.5 寻找网站所有者
 
 可以使用`WHOIS`协议查询域名的注册者是谁。
 
@@ -134,7 +137,7 @@ Python有个针对该协议的封装库，查看其[文档](https://pypi.python.
 
     pip install python-whois
 
-示例`whois-demo.py`:
+示例`whois_demo.py`:
 
     import whois
     print(whois.whois('appspot.com'))
@@ -142,25 +145,25 @@ Python有个针对该协议的封装库，查看其[文档](https://pypi.python.
 返回结果：
 
     {
-		...
-		"name_servers":[
-			"NS1.GOOGLE.COM",
-			"NS2.GOOGLE.COM",
-			"NS3.GOOGLE.COM",
-			"NS4.GOOGLE.COM",
-			"ns4.google.com",
-			"ns2.google.com",
-			"ns1.google.com",
-			"ns3.google.com",
-		],
-		"org":"Google Inc.",
-		"emails":[
-			"abusecomplaints@markmonitor.com",
-			"dns-admin@google.com"
-		]
-	}
+        ...
+        "name_servers":[
+            "NS1.GOOGLE.COM",
+            "NS2.GOOGLE.COM",
+            "NS3.GOOGLE.COM",
+            "NS4.GOOGLE.COM",
+            "ns4.google.com",
+            "ns2.google.com",
+            "ns1.google.com",
+            "ns3.google.com",
+        ],
+        "org":"Google Inc.",
+        "emails":[
+            "abusecomplaints@markmonitor.com",
+            "dns-admin@google.com"
+        ]
+    }
 
-1.4 编写第一个网络爬虫
+### 1.4 编写第一个网络爬虫
 
 为了抓取网站，我们首先需要下载包含有感兴趣数据的网页，该过程一般称为爬取(crawling)。
 
@@ -172,22 +175,22 @@ Python有个针对该协议的封装库，查看其[文档](https://pypi.python.
 * 遍历每个网页的数据库ID
 * 跟踪网页链接
 
-1.4.1 下载网页
+#### 1.4.1 下载网页
 
 要想爬取网页，首先需要将其下载下来。
 可以使用Python的`urllib2`模块下载URL
 
-示例`url-download.py`：
+示例`url_download.py`：
 
     import urllib2
     def download(url):
-    	print("Downloading...:",url)
-    	try:
-    		html = urllib2.urlopen(url).read()
-    	except urllib2.URLError as e:
-    		print("Download error:",e.reason)
-    		html = None
-    	return html
+        print("Downloading...:",url)
+        try:
+            html = urllib2.urlopen(url).read()
+        except urllib2.URLError as e:
+            print("Download error:",e.reason)
+            html = None
+        return html
 
 1. 重试下载
 
@@ -201,7 +204,7 @@ Python有个针对该协议的封装库，查看其[文档](https://pypi.python.
 
 查看[HTTP错误列表](https://tools.ietf.org/html/rfc7231#section-6)
 
-支持重新下载版本程序示例`url-download-retry.py`：
+支持重新下载版本程序示例`url_download_retry.py`：
 
     # -*- coding: utf-8 -*-
     import urllib2
@@ -227,7 +230,7 @@ Python有个针对该协议的封装库，查看其[文档](https://pypi.python.
 
 因此，为了下载更加可靠，需要**控制用户代理的设定**。
 
-设定用户代理的示例`url-download-set-agent`：
+设定用户代理的示例`url_download_set_agent`：
 
     # -*- coding: utf-8 -*-
 
@@ -252,7 +255,7 @@ Python有个针对该协议的封装库，查看其[文档](https://pypi.python.
     
 至此，download函数可以在后续实例中得到复用。该函数拥有**捕获异常**、**重试下载**、**设置用户代理**的功能。
 
-1.4.2 网站地图爬虫
+#### 1.4.2 网站地图爬虫
 
 网站地图sitemap文件示例如下`sitemap.xml`：
 
@@ -272,7 +275,7 @@ Python有个针对该协议的封装库，查看其[文档](https://pypi.python.
 
 解析网站地图文件，需要使用一个简单的正则表达式，从<loc>标签中提取出URL。
 
-示例如下`sitemap-parse.py`：    
+示例如下`sitemap_parse.py`：    
 
     # -*- coding = utf-8 -*-
     from url_download import download
@@ -299,7 +302,7 @@ Python有个针对该协议的封装库，查看其[文档](https://pypi.python.
     ('Download error', gaierror(11004, 'getaddrinfo failed'))
 
 
-1.4.3 ID遍历爬虫
+#### 1.4.3 ID遍历爬虫
 
 由于sitemap提供的网页链接不可靠，因此需要写一个不依赖于sitemap的爬虫。
 
@@ -311,7 +314,7 @@ Python有个针对该协议的封装库，查看其[文档](https://pypi.python.
 而另一些网站则会使用非连续大数作为ID，或者不使用数值作为ID，此时遍历就难以发挥其作用了。
 
 
-1.4.2 链接爬虫
+#### 1.4.2 链接爬虫
 
 如前所述，可以通过`sitemap爬虫`和`ID遍历爬虫`最小化下载的网页数量。
 
@@ -321,14 +324,230 @@ Python有个针对该协议的封装库，查看其[文档](https://pypi.python.
 
 示例如下`link_scrape.py`：
 
+
+## Chapter02 第2章 数据抓取
+
+在上一章中，构建了一个爬虫，可以通过跟踪链接的方式下载所需的网页，虽然可行，但是不够实用，因为爬虫在下载网页之后又将结果丢弃掉了。
+现在，我们需要让这个爬虫从每个网页中抽取一些数据，然后实现某些事情，这种做法称为**抓取**(scraping)。
+
+抽取网页数据的方法有三种：
+
+* 正则表达式
+* Beautiful Soup
+* lxml
+
+### 2.1 分析网页
+
+查看源代码是了解一个网页的结构的一种实用方法。
+
+**笔者注**：笔者实用的Chrome内核浏览器，F12调用开发者工具可查看整个网页的结构,并且可以debug。
+
+### 2.2 三种网页抓取方法
+
+#### 2.2.1 
+
+Python正则表达式相关知识可以查看[完整介绍](https://docs.python.org/2/howto/regex.html)
+
+
+正则表达式抓取表格数据示例如下`regex_demo.py`:
+
+    # -*- coding : utf-8 -*-
+    from url_download import download
+    import re
+    url = "http://example.webscraping.com/view/United-Kingdom-239"
+    html = download(url)
+    re.findall('<td class="w2p_fw"(.*?)</td>',html)
+
+正则表达式弊端：正则表达式存在**难以构造**、**可读性差**的问题。此外，还有网页更新后会使该正则表达式方法无法满足抓取需求。
+
+#### 2.2.2 Beautiful Soup
+
+`Beautiful Soup`是一个Python模块，该模块可以解析网页，并提供定位内容的便捷接口。
+
+模块的安装方法：
+
+    pip install beautifulsoup4
+
+使用`Beautiful Soup`模块的第一步是**将已下载HTML内容解析为soup文档**。（格式化HTML）
+
+示例`soup_parse_demo.py`如下：    
+
+    # -*- coding = utf-8 -*-
+    from bs4 import BeautifulSoup
+    broken_html = '<ul class="country"><li>Area<li>Population</ul>'
+    # parse the HTML
+    soup = BeautifulSoup(broken_html,"html.parse")
+    fixed_html = soup.prettify()
+    print fixed_html
+
+返回结果：
+
+    <ul class="country">
+        <li>Area</li>
+        <li>Population</li>
+    </ul>
+
+从执行结果中可以看出`Beautiful Soup`能够正确解析确实的引号并闭合标签。
+然后使用`find()`，和`findall()`方法来定位需要的元素。
+
+
+`find()`示例`bs4_find_demo.py`如下：
+
+    # -*- coding = utf-8 -*-
+    from bs4 import BeautifulSoup
+    broken_html = '<ul class="country"><li>Area<li>Population</ul>'
+    # parse the HTML
+    soup = BeautifulSoup(broken_html,"html.parse")
+    ul = soup.find('ul',attrs={'class':'country'})
+    ul.find('li') # returns just the first match
+    ur.find_all('li') # returns all matches
+
+返回结果：
+
+    [<li>Area</li>,<li>Population</li>]
+
+查看全部BeautifulSoup的[官方文档](http://www.crummy.com/software/BeautifulSoup/bs4/doc)
+
+完整代码`bs4_scraping.py`示例：
+
+    from url_download import download
+    from bs4 import BeautifulSoup
+    url = "http://example.webscraping.com/places/view/United-Kingdom-239"
+    html = download(url)
+    soup = BeautifulSoup(html,"lxml")
+    # locate the area row
+    tr = soup.find(attrs={'id':'places_area__row'})
+    td = tr.find(attrs={'class':'w2p_fw'}) # locate the area tag
+    area = td.text # extract the text from this tag
+    print area
+
+返回结果：
     
+    244,820 square kilometres
 
-</xmp>
+**笔者注**：`BeautifulSoup(html,"lxml")`被修改
 
-<a href="https://yqmcu.github.io/books_study/01-flask_web_development/note.html">页面展示</a>
+使用BeautifulSoup更容易构造和理解程序。而且布局的小变化不会对程序造成很大影响。
 
 
-<!-- <script src="https://yqmcu.github.io/books_study/scripts/strapdown.js"></script> -->
-<script src="../scripts/strapdown.js"></script>
+#### 2.2.3 Lxml
 
-</html> 
+Lxml是基于`libxml2`这一XML解析库的Python封装。该模块使用C语言编写，解析速度比`Beautiful Soup`更快。
+
+模块的安装方法：
+
+    pip install lxml
+
+安装成功：
+
+    Installing collected packages: lxml
+    Successfully installed lxml-3.7.3
+
+最新安装说明可以参考[http://Lxml.de/installation.html](http://Lxml.de/installation.html)
+
+lxml格式化HTML示例`lxml_parse_demo.py`如下：
+
+    # -*- coding = utf-8 -*-
+    import lxml.html
+    broken_html = '<ul class=country><li>Area<li>Population</ul>'
+    tree = lxml.html.fromstring(broken_html) # parse the HTML
+    fixed_html = lxml.html.tostring(tree,pretty_print=True)
+    print(fixed_html)
+
+返回结果：
+
+    <ul class="country">
+    <li>Area</li>
+    <li>Population</li>
+    </ul>
+
+解析完输入内容之后，进入选择元素的步骤，此时`lxml`有几种不同的方法，比如`XPath选择器`和类似`Beautiful Soup`的`find()`方法。
+
+不过后续我们将会使用`CSS选择器`，它更加简洁，并且能够在第5章解析动态内容时得以复用。
+
+使用lxml的CSS选择器抽取数据的示例`lxml_css_demo.py`如下：
+
+    # -*- coding = utf-8 -*-
+    from url_download import download
+    import lxml.html
+    url = "http://example.webscraping.com/places/view/United-Kingdom-239"
+    html = download(url)
+    tree = lxml.html.fromstring(html) # parse the HTML
+    td = tree.cssselect('tr#places_area__row > td.w2p_fw')[0]
+    area = td.text_content()
+    print(area)
+
+返回结果：
+    
+    244,820 square kilometres
+
+**笔者注**：使用`cssselect()`方法需要安装cssselect模块
+
+安装css选择器的方法:
+
+    pip install cssselect
+
+安装成功：
+
+    Installing collected packages: cssselect
+    Successfully installed cssselect-1.0.1
+
+此例中的css选择器代码：`tree.cssselect('tr#places_area__row > td.w2p_fw')[0]`，选择了id为places_area__row的行标签的class为w2p_fw的子标签。
+
+**CSS选择器的一些常用示例如下：**
+
+* 选择所有标签：`*`
+* 选择&lt;a&gt;标签：`a`
+* 选择所有class="link"的元素：`.link`
+* 选择class="link"的&lt;a&gt;标签：`a.link`
+* 选择id="home"的元素：`#home`
+* 选择id="home"的&lt;a&gt;标签：`a#home`
+* 选择父元素为&lt;a&gt;标签的所有&lt;span&gt;子标签：a > span
+* 选择&lt;a&gt;标签内部的所有&lt;span&gt;标签：`a span`
+* 选择title属性为"Home"的所有&lt;a&gt;标签：`a[title=Home]`
+
+关于W3C提出的CSS3规范，其网址为[http://www.w3.org/TR/2011/REC-css3-selectors-20110929](http://www.w3.org/TR/2011/REC-css3-selectors-20110929).
+
+Lxml已经实现了大部分CSS3属性，其支持的功能参见[https://cssselect.readthedocs.io/en/latest/#supported-selectors](https://cssselect.readthedocs.io/en/latest/#supported-selectors)
+
+**笔者注**：cssselect文档URL已经变更。
+
+需要注意的是，lxml的内部实现中，实际上是**将CSS选择器转换为等价的XPath转换器**。
+
+#### 2.2.4 性能对比
+
+...
+...
+
+实验结果：
+
+* Beautiful Soup最慢。
+
+因为lxml和正则表达式模块都是C语言编写的，而BeautifulSoup是纯Python编写的。
+
+* lxml表现得和正则表达式差不多好。
+
+由于lxml在搜索元素之前，必须将输入解析为内部格式，因此会产生额外的开销。
+而当抓取同一网页的多个特征时，这种解析产生的开销就会降低，**lxml**也就**更具有竞争力**。
+
+
+#### 2.2.5 结论
+
+每种抓取方法的优缺点：
+
+|抓取方法|性能|使用难度|安装难度|
+|----|----|----|----
+|正则表达式|快|困难|简单（内置模块）|
+|Beautiful Soup|慢|简单|简单（纯Python）|
+|Lxml|快|简单|简单（C语言）|
+
+
+
+
+</div>
+    
+<script src="../scripts/markdown_parse.js"></script>
+
+
+</body>
+</html>
