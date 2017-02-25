@@ -17,8 +17,10 @@
 
 	document.body.appendChild(xmp);
 
+	var script_src = document.getElementsByTagName('script')[0].getAttribute('src');
+	script_src = script_src.replace("markdown_parse","strapdown");
 
 	var strapdownScript =  document.createElement("script");
-	strapdownScript.setAttribute("src","../scripts/strapdown.js");
+	strapdownScript.setAttribute("src",script_src);
 	document.body.appendChild(strapdownScript);
 })();
