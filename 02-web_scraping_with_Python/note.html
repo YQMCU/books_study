@@ -624,7 +624,64 @@ def scrape_callback(url,html):
 
 ## Chapter03 第3章 下载缓存
 
+上一章中，学习了如何从已爬取到的网页中抓取数据，以及抓取结果保存在到表格中。
 
+如果想要抓取另外一个字段，比如国旗图片的URL，那么该怎么做呢？
+
+要想抓取这些新增的字段，需要重新下载整个网站。
+
+因此，本章提出了对已爬取网页进行缓存的方案，可以让每个网页**只下载一次**。
+
+### 3.1 为链接爬虫添加缓存支持
+
+要想支持缓存，需要修改第1章中编写的`download`函数，使其在URL下载之前进行缓存检查。另外还需要把限速功能移至函数内部。
+只有在真正发生下载时才会触发限速，而在加载缓存时不会触发。
+
+支持缓存功能的代码示例`download_cache_supported.py`如下：
+
+```python
+class Downloader:
+    def __init__(self,delay=5,user_agent='wswp',proxies=None,num_retries=1,cache=None):
+        self.throttle = Throttle(delay)
+        self.user_agent = user_agent
+        self.proxies = proxies
+        self.num_retries = num_retries
+        self.cache = cache
+
+    def __call__(self,url):
+        result = None
+        if self.cache:
+            try:
+                result = self.cache[url]
+            except KeyError:
+                # url is not available in cache
+                pass
+            else:
+                if self.num_retries > 0 and \
+                    500 <= result['code'] < 600:
+                    """
+                        server error so ignore result from cache
+                        and re-download
+                    """
+                    result = None
+        if result is None:
+            """
+                result was not loaded from cache
+                so still need to download
+            """
+            self.throttle.wait(url)
+            proxy = random.choice(self.proxies) if self.proxies else None
+            headers = {'User-agent':self.user_agent}
+            result = self.download(url,headers,proxy,self.num_retries)
+            if self.cache:
+                # save result to cache
+                self.cache[url] = result
+        return result['html']
+
+    def download(self,url,headers,proxy,num_retries,data=None):
+        # ...
+        return {'html':html,'code':code}
+```
 
 </div>
     
